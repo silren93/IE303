@@ -64,7 +64,7 @@ public class BuildingAPI {
     	    return errorResponseDTO;
     	}
     	System.out.print(5/0);
-    	valiDate.building;
+//    	valiDate.building;
     	return null;
     	BuildingDTO result = new BuildingDTO();
     	result.setName(nameBuilding);
