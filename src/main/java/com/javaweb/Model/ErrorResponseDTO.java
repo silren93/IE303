@@ -1,4 +1,4 @@
-package com.javaweb.Bean;
+package com.javaweb.Model;
 
 import java.util.ArrayList;
 import java.util.List;

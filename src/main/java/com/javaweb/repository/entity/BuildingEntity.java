@@ -1,10 +1,11 @@
-package com.javaweb.Bean;
+package com.javaweb.repository.entity;
 
-public class BuildingDTO {
+public class BuildingEntity {
     private String name;
     private Integer numberOfBasement;
     private String ward;
     private String street;
+    
 	public String getName() {
 		return name;
 	}
