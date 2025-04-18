@@ -3,7 +3,7 @@ package com.javaweb.Model;
 public class BuildingDTO {
     private String name;
     private Integer numberOfBasement;
-    private String adress;
+    private String address;
 	public String getName() {
 		return name;
 	}
@@ -17,11 +17,10 @@ public class BuildingDTO {
 		this.numberOfBasement = numberOfBasement;
 	}
 	public String getAdress() {
-		return adress;
+		return address;
 	}
 	public void setAdress(String adress) {
-		this.adress = adress;
+		this.address = adress;
 	}
-
 
 }
