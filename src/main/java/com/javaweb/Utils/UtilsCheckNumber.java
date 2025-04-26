@@ -1,7 +1,7 @@
 package com.javaweb.Utils;
 
 public class UtilsCheckNumber {
-	public static boolean checkNumber(String data) {
+	public static boolean isNumber(String data) {
 		try {
 			Long number = Long.parseLong(data);
 		}
