@@ -1,7 +1,6 @@
 package com.javaweb.repository.impl;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -11,6 +10,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import com.javaweb.Utils.ConnectionUtils;
 import com.javaweb.Utils.UtilsCheckNumber;
 import com.javaweb.Utils.UtilsCheckString;
 import com.javaweb.repository.BuildingRepository;
@@ -18,9 +18,6 @@ import com.javaweb.repository.entity.BuildingEntity;
 
 @Repository
 public class BuildingReponsitoryImpl implements BuildingRepository {
-	static final String DB_URL = "jdbc:mysql://localhost:3306/estatebasic";
-	static final String USER = "root";
-	static final String PASS = "KTr#932409";
 
 	public static void joinTable(Map<String, Object> params, List<String> typeCode, StringBuilder sql) {
 		String staffId = (String) params.get("staffId");
@@ -104,7 +101,7 @@ public class BuildingReponsitoryImpl implements BuildingRepository {
 		querySpecial(params, typeCode, where);
 		sql.append(where); // Add WHERE condition to SQL query
 		List<BuildingEntity> result = new ArrayList<>();
-		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+		try (Connection conn = ConnectionUtils.getConnection();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql.toString());) {
 
