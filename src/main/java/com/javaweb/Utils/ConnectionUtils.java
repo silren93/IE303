@@ -9,15 +9,15 @@ public class ConnectionUtils {
 	private static String USER = "root";
 	private static String PASS = "KTr#932409";
 
-	
 	public static final Connection getConnection() { 
+		Connection conn = null;
 		try { 
-			Connection connection = DriverManager.getConnection(DB_URL,USER,PASS);
-			return connection;
+			conn = DriverManager.getConnection(DB_URL,USER,PASS);
+			return conn;
 		}
 		catch(SQLException ex) { 
 			ex.printStackTrace();
 		}
-		return null;
+		return conn;
 	}
 }
