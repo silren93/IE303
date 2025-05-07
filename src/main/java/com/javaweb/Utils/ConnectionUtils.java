@@ -4,20 +4,27 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionUtils {
-	private static String DB_URL = "jdbc:mysql://localhost:3306/estatebasic";
-	private static String USER = "root";
-	private static String PASS = "KTr#932409";
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 
-	public static final Connection getConnection() { 
-		Connection conn = null;
-		try { 
-			conn = DriverManager.getConnection(DB_URL,USER,PASS);
-			return conn;
-		}
-		catch(SQLException ex) { 
-			ex.printStackTrace();
-		}
-		return conn;
-	}
+@PropertySource("classpath:application.properties")
+public class ConnectionUtils {
+	@Value("${spring.datasource.url}")
+    private static String DB_URL;
+
+    @Value("${spring.datasource.username}")
+    private static  String USER;
+
+    @Value("${spring.datasource.password}")
+    private static String PASS;
+
+    public static Connection getConnection() {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conn;
+    }
 }
