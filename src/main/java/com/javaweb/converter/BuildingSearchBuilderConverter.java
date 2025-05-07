@@ -3,9 +3,12 @@ package com.javaweb.converter;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import com.javaweb.Utils.UtilsMap;
 import com.javaweb.builder.BuildingSearchBuilder;
 
+@Component
 public class BuildingSearchBuilderConverter {
 	public BuildingSearchBuilder toBuildingSearchBuilder(Map<String, Object> params, List<String> typeBuilding) {
 		BuildingSearchBuilder buildingSearch = new BuildingSearchBuilder.Builder()
