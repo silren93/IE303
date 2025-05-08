@@ -29,7 +29,7 @@ public class BuildingRepositoryImpl implements BuildingRepository {
     }
 
 	@Override
-	public void DeleteById(Long id) {
+	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		
 	}
